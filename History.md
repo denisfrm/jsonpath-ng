@@ -1,3 +1,7 @@
+1.7.1 / 2025-01-08
+===================
+  * Fix bool filter type to handle None values
+
 1.7.0 / 2024-10-11
 ===================
   * Allow raw numeric values to be used as keys
