@@ -11,7 +11,7 @@ About
 -----
 
 This library provides a robust and significantly extended implementation
-of JSONPath for Python. It is tested with CPython 3.8 and higher.
+of JSONPath for Python. It is tested with CPython 3.10 and higher.
 
 This library differs from other JSONPath implementations in that it is a
 full *language* implementation, meaning the JSONPath expressions are
@@ -213,6 +213,10 @@ To use the extensions below you must import from `jsonpath_ng.ext`.
 +==============+===============================================+
 | len          | - ``$.objects.`len```                         |
 +--------------+-----------------------------------------------+
+| keys         | - ``$.objects.`keys```                        |
++--------------+-----------------------------------------------+
+| str          | - ``$.field.`str()```                         |
++--------------+-----------------------------------------------+
 | sub          | - ``$.field.`sub(/foo\\\\+(.*)/, \\\\1)```    |
 |              | - ``$.field.`sub(/regex/, replacement)```     |
 +--------------+-----------------------------------------------+
@@ -249,7 +253,7 @@ About arithmetic and string
 ---------------------------
 
 Operations are done with python operators and allows types that python
-allows, and return [] if the operation can be done due to incompatible types.
+allows, and return [] if the operation can't be done due to incompatible types.
 
 When operators are used, a jsonpath must be be fully defined otherwise
 jsonpath-rw-ext can't known if the expression is a string or a jsonpath field,
